@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy on EC2') {
             steps {
                 script {
-                    withCredentials([sshUserPrivateKey(credentialsId: 'ec2aws', keyFileVariable: 'SSH_KEY')]) {
+                    withCredentials([sshUserPrivateKey(credentialsId: 'reactec2', keyFileVariable: 'SSH_KEY')]) {
                     // Pull the Docker image on the EC2 instance
                     sh "ssh -i $SSH_KEY -o StrictHostKeyChecking=no ec2-54-173-73-116.compute-1.amazonaws.com 'docker pull shivangkataria/my-app-1.0'"
 
