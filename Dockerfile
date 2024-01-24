@@ -11,5 +11,5 @@ WORKDIR /app
 COPY --from=build-stage /app/www/build ./public
 COPY server.js ./
 RUN npm install express # or any other dependencies your server.js needs
-EXPOSE 8080 # Or the port your server.js listens on
+EXPOSE 5000 # Or the port your server.js listens on
 CMD ["node", "server.js"]                                                                                                                                
