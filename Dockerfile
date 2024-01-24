@@ -2,7 +2,7 @@
 FROM node:latest as build-stage
 WORKDIR /app
 COPY www/package*.json ./www/
-WORKDIR /app/front-end
+WORKDIR /app/www
 RUN npm install
 COPY www/ ./
 RUN npm run build
