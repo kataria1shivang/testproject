@@ -1,6 +1,6 @@
 FROM node:latest as build-stage
 WORKDIR /app
-COPY www/ ./www/ # Assuming your front-end code is in the "front-end" directory
+COPY www/ ./www/ 
 WORKDIR /app/www
 RUN npm install
 RUN npm run build
@@ -10,6 +10,6 @@ FROM node:latest
 WORKDIR /app
 COPY --from=build-stage /app/www/build ./public
 COPY server.js ./
-RUN npm install express # or any other dependencies your server.js needs
-EXPOSE 5000 # Or the port your server.js listens on
+RUN npm install express
+EXPOSE 5000 
 CMD ["node", "server.js"]                                                                                                                                
