@@ -5,11 +5,6 @@ pipeline {
     agent any
     
     stages {
-        stage('Build Maven') {
-            steps {
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 script {
